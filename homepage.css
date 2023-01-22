@@ -1,0 +1,156 @@
+body {
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    text-rendering: optimizelegibility;
+}
+
+/* / */
+.maincontainer {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden; 
+     /* border: 5px solid red; */
+  }  
+ .maincontainer ul li img{
+    width: 100%;
+   
+} 
+.maincontainer ul li{
+    margin-left: 15px;
+}
+  ul {
+    width: 9999%;
+    height: 100%;
+    list-style: none;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: all 0.75s ease;
+  }
+  
+  li {
+    width: 26.66vw;
+    height: 100%;
+    float: left;
+  }
+  
+  
+  
+  #prev,
+  #next {
+    position: absolute;
+    top: 50%;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 5px 3px;
+    background: white;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: all 0.15s ease;
+    border: 1px solid #ddd;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* #prev:hover,
+  #next:hover {
+    color: #888;
+  } */
+
+
+
+.first{
+    height: auto;
+    width: auto;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+}
+.first>a>img{
+    width: 100%;
+}
+.second{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+   
+    height:auto;
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 10px;
+    column-gap: 10px;
+}
+.second_first{
+    height: 100%;
+   
+    border: 1px solid red;
+    margin-left: 30px;
+}
+.paragraph{
+    text-align: center;
+}
+.paragraph>a{
+    text-decoration: none;
+    font-size: 15px;
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.second_first>a>img{
+    width: 100%;
+    height: 100%;
+}
+.third{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height:auto;
+    width: 100%;
+    /* border: 1px solid red; */
+    margin-top: 10px;
+   
+}
+.third>a>img{
+    width: 100%;
+}
+.four{
+    
+    width: 100%;
+    /* border: 1px solid red; */
+    text-align: center;
+    justify-content: space-evenly;
+}
+.four>a>img{
+    width:210px;
+    height: auto;
+}
+.five{
+    height: 400px;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.six{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+   gap:10px;
+    width: 100%;
+    /* border: 1px solid red; */
+    text-align: center;
+   
+}
+.six>a>img{
+    width: 100%;
+}
+#h4{
+    text-align: center;
+    font-size: 15px;
+}

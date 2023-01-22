@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="login.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <div class="main">
+      <div id="left_side">
+        <h1>Welcome to the world of Clothing Keeda!</h1>
+        <img
+          src="https://images.bewakoof.com/web/group-19-1617704502.png"
+          alt=""
+        />
+      </div>
+      <div id="right_side">
+        <h1>Admin Page</h1>
+        <p>for Latest trends, exciting offers and everything Clothing Keeda!</p>
+        <form action="">
+          <input type="text" id="email" name="email" placeholder="Enter your email" required/>
+          <input type="text" id="password" name="password" placeholder="Enter your password" required/>
+          <input type="Submit" name="" id="btn"  value="Continue"/>
+        </form>
+       
+    </div>
+  </body>
+</html>
+<script>
+  let admin=document.querySelector("form")
+  admin.addEventListener("submit",myfun)
+
+  async function myfun(event){
+    event.preventDefault()
+    // console.log("Hii")
+    let adminObj={
+      email:admin.email.value,
+      password:admin.password.value
+    }
+    let data= await signin(adminObj)
+    console.log("getting data",data)
+   
+    
+    if(data.message=="Login Success "){
+      localStorage.setItem("token",JSON.stringify(data.AdminToken))
+  
+      window.location.href="./admin/homepage.html"
+      alert(data.message)
+    }else{
+      alert(data.message)
+    }
+    
+  }
+  async function signin(adminObj){
+    try {
+        let result=await fetch("https://lively-tan-trunks.cyclic.app/admin/login",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(adminObj)
+        })
+        return  await result.json()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+</script>

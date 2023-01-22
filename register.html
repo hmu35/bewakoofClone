@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="register.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <!-- <link rel="stylesheet" href="footer.css" /> -->
+    <title>login</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="main">
+      <div id="left_side">
+        <img
+          src="https://images.bewakoof.com/web/desktop-sign-up-banner--1623760676.png"
+          alt=""
+        />
+      </div>
+      <div id="right_side">
+        <h1>Sign up</h1>
+        <p>Hi new buddy, let's get you started with the Clothingkeeda!</p>
+        <form action="">
+          <input
+            type="text"
+            id="name"
+            class="good"
+            name="name"
+            placeholder="Enter Your Name"
+          />
+          <input
+          required
+            type="text"
+            id="mob"
+            class="good"
+            name="mob"
+            placeholder=" Mobile Number"
+          />
+          <input
+          required
+            type="text"
+            id="email"
+            class="good"
+            name="email"
+            placeholder="Email Id"
+          />
+          <input
+          required
+            type="text"
+            id="pass"
+            class="good"
+            name="password"
+            placeholder="Password"
+          />
+          <input type="Submit" name="" id="btn" value="PROCEED" />
+        </form>
+        <p id="user"><a href="login.html">Existing User? Log In</a></p>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>
+<script>
+  let register = document.querySelector("form");
+  register.addEventListener("submit", myfun);
+
+  async function myfun(event) {
+    event.preventDefault();
+    console.log("heloo");
+    let userObj = {
+      name: register.name.value,
+      mobile: register.mob.value,
+      email: register.email.value,
+      password: register.password.value,
+    };
+    let data = await userRegister(userObj);
+    console.log(data);
+   
+    alert(data.message);
+    location.replace("login.html");
+  }
+  async function userRegister(userObj) {
+    console.log(userObj);
+    try {
+      let data = await fetch("https://lively-tan-trunks.cyclic.app/user/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userObj),
+      });
+      return await data.json();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+</script>
+<!-- <script src="./index.js" type="module"></script> -->

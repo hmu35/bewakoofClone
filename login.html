@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css"> -->
+    <link rel="stylesheet" href="login.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <!-- <div id="navbar"></div> -->
+    <div class="main">
+      <div id="left_side">
+        <h1>Welcome to the world of Clothing Keeda!</h1>
+        <img
+          src="https://images.bewakoof.com/web/group-19-1617704502.png"
+          alt=""
+        />
+      </div>
+      <div id="right_side">
+        <h1>Log in</h1>
+        <p>for Latest trends, exciting offers and everything Clothing Keeda!</p>
+        <form action="">
+          <input type="text" id="email" name="email" placeholder="Enter your email" required />
+          <input type="text" id="password" name="password" placeholder="Enter your password" required />
+          <input type="Submit" name="" id="btn"  value="Continue"/>
+           <p  id="new"><a href="register.html">Create New Account</a></p>
+           <p id="new"><a href="admin.html">Admin Login</a></p>
+        </form>
+        <div id="or">
+          <hr />
+          OR
+          <hr />
+        </div>
+        <div id="gmail">
+          <i id="sym" class="fa-regular fa-envelope"></i>
+          <a href=""> <span id="span">CONTINUE WITH EMAIL</span></a>
+        </div>
+        <div class="link">
+          <div class="google">
+            <a href="">
+              <i id="g" class="fa-brands fa-google" style="color: red"></i
+            ></a>
+            <a href=""><h2 id="one">GOOGLE</h2></a>
+          </div>
+          <div class="facebook">
+            <a href="">
+              <i id="f" class="fa-brands fa-facebook-f" style="color: blue"></i
+            ></a>
+            <a href=""><h2 id="two">FACEBOOK</h2></a>
+          </div>
+        </div>
+        <p id="last">
+          By creating an account or logging in, you agree with Clothing Keeda's <br />
+          <a href="">Terms and Conditions</a> and <a href="">Privacy Policy.</a>
+        </p>
+      </div>
+    </div>
+    <!-- <div id="footer"></div> -->
+  </body>
+</html>
+<script>
+  let login=document.querySelector("form")
+  login.addEventListener("submit",myfun)
+
+  async function myfun(event){
+    event.preventDefault()
+    // console.log("Hii")
+    let loginObj={
+      email:login.email.value,
+      password:login.password.value
+    }
+    let data= await signin(loginObj)
+    console.log(data.message)
+   
+   if(data.message=="Login Success"){
+   
+    localStorage.setItem("token",data.token)
+    alert(data.message)
+   location.replace("index.html")
+   }else{
+    alert(data.message)
+   }
+   
+  }
+  async function signin(loginObj){
+    try {
+        let result=await fetch("https://lively-tan-trunks.cyclic.app/user/login",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(loginObj)
+        })
+        return await result.json()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+</script>
+<script src="./index.js" type="module"></script>

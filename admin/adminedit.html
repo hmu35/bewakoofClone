@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin page</title>
+    <link rel="stylesheet" href="adminedit.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="container-left">
+        <h1>Clothing Kedd</h1>
+        <div class="crud-list">
+          <div>
+            <div><i class="bx bx-grid-alt"></i> <a href="homepage.html">Dashboard</a></div>
+            <div>
+              <i class="bx bx-folder-plus"></i> <a href="add.html">Add Product</a>
+            </div>
+            <div>
+              <i class="bx bx-edit-alt"></i>
+              <a href="">Edit Product</a>
+            </div>
+            <div>
+              <i class="bx bx-message-square-minus"></i>
+              <a href="delete.html">Delete Product</a>
+            </div>
+            <div>
+              <i class="bx bx-message"></i>
+              <a href="">Messages</a>
+            </div>
+            <div>
+              <i class="bx bx-cog"></i>
+              <a href="">Setting</a>
+            </div>
+          </div>
+          <div class="log-out">
+            <i class="bx bx-log-out"></i>
+            <a href="./homepage.html">Logout</a>
+          </div>
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="container-top">
+          <div class="container-top-left">
+            <span class="bx bx-menu sidebarBtn"></span>
+            <span>Edit Product</span>
+          </div>
+          <div class="container-top-right">
+            <img
+              width="30%"
+              src="https://ca.slack-edge.com/T04FCAZ143V-U04FQUACYH3-7b3cafc7a4d9-512"
+              alt="#"
+            />
+            <h4>Manoj</h4>
+          </div>
+        </div>
+        <div class="container-mid">
+          <div class="container-mid-bottom">
+            <div class="fetch">
+              <div id="edit"><h2>Edited Item</h2></div>
+              <div class="fetchdata"></div>
+            </div>
+            <div class="edit">
+              <div><h4>Edit Selected Item</h4></div>
+
+              <div class="form-container">
+                <form >
+                  <input type="text" name="id" placeholder="Id">
+                  <input  type="text" name="title" placeholder="Title" />
+                  <input
+                   
+                    type="text"
+                    name="image"
+                    placeholder="Img url"
+                  />
+                  <input
+                    
+                    type="number"
+                    name="mrp"
+                    id="MRP"
+                    placeholder="MRP"
+                  />
+                  <input
+                   
+                    type="text"
+                    name="price"
+                    placeholder="Price"
+                  />
+                  <input
+                   
+                    type="text"
+                    name="category"
+                    placeholder="Category"
+                  />
+                  <input
+                    
+                    type="text"
+                    name="gender"
+                    placeholder="Gender"
+                  />
+                  <input
+                   
+                    type="text"
+                    name="brand"
+                    placeholder="Brand"
+                  />
+                  <input
+                    
+                    type="text"
+                    name="design"
+                    placeholder="Design"
+                  />
+                  <input
+                  
+                    type="text"
+                    name="rating"
+                    placeholder="Rating"
+                  />
+                  <input
+                    type="submit"
+                    name="submit"
+                    value="Update Product"
+                    id="submit-btn"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="edit.js"></script>

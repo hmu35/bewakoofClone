@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="searchProduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+   <style>
+   
+   
+   </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="location"><p>Home    /    Mens Clothing</p></div>
+    <div id="cont">
+        <div id="left">
+            <div id="category">
+                <h4>category</h4>
+                <div><input id="tshirt" type="checkbox"><p>T-shirt</p></div>
+                <div><input  id="short" type="checkbox"><p>Short</p></div>
+                <div><input  id="jeans" type="checkbox"><p>Jeans</p></div>
+                <div><input id="jacket" type="checkbox"><p>Jacket</p></div>
+                
+                <h4>Colors</h4>
+                <div id="color">
+                    <div id="red"></div>
+                    <div id="black"></div>
+                    <div id="white"></div>
+                    <div id="green"></div>
+                    <div id="blue"></div>
+                    <div id="yellow"></div>
+                </div>
+                <h4>Brand</h4>
+                <div><input id="bewacoof" type="checkbox"><p>Bewakoof</p></div>
+                <div><input type="checkbox"><p>Snitch</p></div>
+                <div><input type="checkbox"><p>Dilinger</p></div>
+            </div>
+        </div>
+        <div id="right"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
+<script>
+    let cart=JSON.parse(localStorage.getItem("cartProduct"))||[];
+    let skey=localStorage.getItem("searchKey");
+   let bag;
+    async function getData() {
+  try {
+    let res = await fetch(`https://lively-tan-trunks.cyclic.app/product/search_category?q=${skey}`);
+    let data = await res.json();
+    console.log(data);
+    bag=data
+    
+    displayData(bag);
+    
+  } catch (error) {
+    console.log(error);
+  }
+}
+getData();
+function displayData(bag) {
+  document.querySelector("#right").innerHTML=""
+  console.log(bag)
+  bag.forEach((ele) => {
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+    img.setAttribute("src", ele.Img_ulr);
+    let Title = document.createElement("h5");
+    Title.innerText = ele.Title;
+    let Brand = document.createElement("p");
+    Brand.innerText = ele.Brand;
+    let MRP = document.createElement("h4");
+    MRP.innerHTML = `<h5>&#8377; ${ele.Mrp}</h5>`;
+    MRP.style.color="black"
+    // MRP.innerText=ele.MRP
+    let price = document.createElement("h5");
+    price.innerHTML = `<h4>&#8377; ${ele.Price}</h4>`
+    price.style.textDecoration=`line-through`
+    let Id=document.createElement("button")
+    Id.innerText="ADD To CART";
+    Id.addEventListener("click",add)
+    function add(){
+       if(cart.includes(ele)){
+            alert("Already product in cart")
+       }else{
+        cart.push(ele);
+        localStorage.setItem("cartProduct",JSON.stringify(cart))
+        alert("Product added")
+       }
+    }
+    div.append(img, Title, Brand, MRP, price,Id);
+    document.querySelector("#right").append(div);
+  });
+}
+
+document.querySelector("#location").innerText=`Home    /   ${skey}`;
+
+
+
+let Tshirt=document.querySelector("#tshirt");
+Tshirt.addEventListener("click",fun)
+
+function fun(){
+  
+   let filterData=bag.filter((ele)=>{
+      return ele.Category=="T-Shirt"
+   })
+   displayData(filterData)
+   console.log(filterData)
+//    console.log(bag)
+}
+let Sort=document.querySelector("#short");
+Sort.addEventListener("click",sort)
+
+function sort(){
+  
+   let filtersort=bag.filter((ele)=>{
+      return ele.Category=="Shorts"
+   })
+   displayData(filtersort)
+   console.log(filtersort)
+   console.log(bag)
+}
+let Jeans=document.querySelector("#jeans");
+Jeans.addEventListener("click",jeans)
+
+function jeans(){
+  
+   let filterjeans=bag.filter((ele)=>{
+      return ele.Category=="jeans"
+   })
+   displayData(filterjeans)
+   console.log(filterjeans)
+   console.log(bag)
+}
+let Jacket=document.querySelector("#jacket");
+Jacket.addEventListener("click",jacket)
+
+function jacket(){
+  
+   let filterjacket=bag.filter((ele)=>{
+      return ele.Category=="jacket"
+   })
+   displayData(filterjacket)
+   console.log(filterjacket)
+   console.log(bag)
+}
+let bewacoof=document.querySelector("#bewacoof");
+bewacoof.addEventListener("click",company)
+
+function company(){
+  
+   let filterbewacoof=bag.filter((ele)=>{
+      return ele.Brand=="Bewacoof"
+   })
+   displayData(filterbewacoof)
+   console.log(filterbewacoof)
+   console.log(bag)
+}
+let search=document.querySelector("#search_button")
+search.addEventListener("click",data)
+
+function data(){
+  let searchData=document.querySelector("#input_box").value;
+  localStorage.setItem("searchKey",searchData);
+  console.log("Hii")
+  window.location.href="searchProduct.html";  
+}
+
+
+
+</script>
+<script src="./index.js" type="module"></script>

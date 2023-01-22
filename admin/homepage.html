@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-left">
+            <h1>Clothing Kedda</h1>
+            <div class="crud-list">
+                <div>
+                    <div><i class="bx bx-grid-alt"></i>
+                        <a href="homepage.html">Dashboard</a></div>
+                    <div><i class="bx bx-folder-plus"></i>
+                        <a href="add.html">Add Product</a></div>
+                    <div>
+                        <i class="bx bx-edit-alt"></i>
+                        <a href="adminedit.html">Edit Product</a></div>
+                    <div><i class="bx bx-message-square-minus"></i>
+                        <a href="delete.html">Delete Product</a></div>
+                    <div>
+                        <i class="bx bx-message"></i>
+                        <a href="">Messages</a></div>
+                    <div>
+                        <i class="bx bx-cog"></i>
+                        <a href="">Setting</a></div>
+                </div>
+                <div class="log-out"><i class="bx bx-log-out"></i>
+                    <a href="../index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="container-top">
+                <div class="container-top-left">
+                <span class="bx bx-menu sidebarBtn"></span>
+                <span>Dashboard</span>
+                </div>
+                <div class="container-top-right">
+                    <img width=30% src="https://ca.slack-edge.com/T04FCAZ143V-U04FQUACYH3-7b3cafc7a4d9-512" alt="#">
+                    <h4>Manoj</h4>
+                </div>
+            </div>
+            <div class="container-mid">
+                <div class="container-mid-top">
+                    <div>
+                        <h3>Total Items</h3>
+                        <h1 id="datashow"></h1>
+                    </div>
+                    <div>
+                        <h3>Newly Added</h3>
+                        <h1 id="added"></h1>
+                    </div>
+                    <div>
+                        <h3>Total Edited</h3>
+                        <h1 id="edit">1</h1>
+                    </div>
+                    <div>
+                        <h3>Deleted Items</h3>
+                        <h1 id="deletedata" >2</h1>
+                    </div>
+                </div>
+                <div class="container-mid-bottom">
+                    <h3>Admin Details:-</h3>
+                    <img src="https://ca.slack-edge.com/T04FCAZ143V-U04FQUACYH3-7b3cafc7a4d9-512" alt="#">
+                    <h4>Name:Manoj Kumar</h4>
+                    <p>Email:manojsfstm5@gmail.com</p>
+                    <p>Mob:-7654504943</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    let showdata=localStorage.getItem("data")
+    document.querySelector("#datashow").innerText=showdata
+    let deletedata=localStorage.getItem("count")
+    document.querySelector("#deletedata").innerText=deletedata
+    let addData=localStorage.getItem("addData")
+    document.querySelector("#added").innerText=addData
+    let editData=localStorage.getItem("editData")
+    document.querySelector("#edit").innerText=editData
+</script>

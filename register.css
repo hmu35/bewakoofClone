@@ -1,0 +1,177 @@
+.main{
+    height: 600px;
+    max-width: 100%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#left_side{
+    height: 600px;
+    max-width: 100%;
+    /* border: 1px solid red; */
+    background-color: #fffcf0;
+   
+}
+#right_side{
+    
+    height: 600px;
+    max-width: 100%;
+    /* border: 1px solid red; */
+}
+#left_side>img{
+    padding-top: 100px;
+    padding-left: 50px;
+    width: 80%;
+}
+#left_side>h1{
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#right_side>h1{
+    text-align: center;
+}
+#left_side>img{
+    width: 50%;
+    margin-left: 130px;
+}
+#right_side>p{
+   
+    text-align: center;
+    font-family: montserrat,sans-serif;
+     font-size: 18px;
+      color: #a0a0a0
+}
+form{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+#btn{
+    width: 60%;
+    margin: auto;
+   padding: 20px;
+   margin-top: 20px;
+   background-color: #42a2a2;
+   font-size: 20px;
+   border-radius: 5px;
+   border: none;
+   color: white;
+}
+#btn:hover{
+    cursor: pointer;
+}
+.good{
+    width: 53%;
+    
+    margin: auto;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: large;
+    font-weight: bold;
+  
+    
+}
+#gmail{
+height: 40px;
+width: 55%;
+border: 1px solid grey;
+margin: auto;
+}
+hr{
+border: 1px solidr black;
+width: 45%;
+}
+#or{
+display: flex;
+
+width: 400px;
+margin: auto;
+margin-top:30px ;
+margin-bottom: 30px;
+}
+#gmail{
+display: flex;
+align-items: center;
+border-radius: 5px;
+ 
+}
+#gmail:hover{
+cursor: pointer;
+}
+
+#sym{
+padding-left: 70px;
+}
+#span{
+padding-left: 10px;
+text-decoration: none;
+font-size: 18px;
+}
+a{
+text-decoration: none;
+color:grey;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.link{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+
+height: 40px;
+width: 55%;
+/* border: 1px solid red; */
+margin: auto;
+margin-top: 20px;
+}
+.google{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+text-align: center;
+height: 40px;
+width: 90%;
+border: 1px solid grey;
+border-radius: 5px;
+}
+.facebook{
+height: 40px;
+width: 90%;
+border: 1px solid grey;
+border-radius: 5px;
+padding-left: 18px;
+}
+#g{
+padding-top: 10px;
+padding-right: 10px;
+font-size: 20px;
+}
+.google>a>#one{
+margin-top: 8px;
+padding-right: 15px;
+color: grey;
+font-size: 20px;
+}
+#f{
+padding-top: 10px;
+padding-right: 10px;
+font-size: 20px;
+}
+.facebook>a>#two{
+margin-top: -22px;
+padding-left: 30px;
+color: grey;
+font-size: 20px;
+}
+#last>a{
+color:blue
+}
+#last{
+margin-top: 50px;
+}
+
+#user a{
+    color: blue;
+}

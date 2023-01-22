@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <title>Payment</title>
+</head>
+<body>
+    <div id="navbar"></div>
+  <div class="container">
+   
+   
+    <div class="payment">
+        <h1 class="h1">Payment</h1>
+        <form action="" id="placed">
+           
+           
+            <input type="text" placeholder="Enter Your Card Number"  required>
+            <input type="date" name="" id="" placeholder="Enter Your Card Expiry" required>
+            <input type="password" name="" id="" placeholder="Enter Your OTP">
+            <input type="text" name="" id="amount" placeholder="Your Amount">
+            <input type="Submit" name="" class="place_order" id="place_order" value="Order Placed">
+        </form>
+    </div>
+    
+  </div>
+  <div id="footer"></div>
+</body>
+</html>
+<script>
+    let Amount=localStorage.getItem("Amount");
+    document.querySelector("#amount").value=Amount
+    let placed=document.querySelector("form");
+    placed.addEventListener("submit",place);
+    function place(event)
+    {
+        event.preventDefault();
+        alert("Order Placed");
+        location.replace("index.html")
+    }
+</script>
+<script src="./index.js" type="module"></script>

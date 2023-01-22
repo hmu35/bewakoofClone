@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Keeda | cart</title>
+    <link rel="icon" type="image/x-icon" href="image\logoFooter.jpg">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+   
+    <style>
+       
+    </style>
+</head>
+
+<body>
+   
+
+<div id="navbar"></div>
+            <div id="line"></div>
+            <div id="cont">
+                <div id="cl"></div>
+                <div id="cr">
+
+                    
+                    <div id="crbody">
+                       <hr>
+                        <p class="pp" id="pd">PRICE DETAILS</p>
+                        <Div class="p">
+                            <p>price</p>
+                            <p class="price"></p>
+                        </Div>
+                        <Div class="p">
+                            <p>Savings</p>
+                            <p id="savings">0</p>
+                        </Div>
+                        <hr>
+                        <Div class="pp">
+                            <p>AMOUNT PAYABLE</p>
+                            <p id="rice"></p>
+                        </Div>
+                        <button id="checkout" onclick="ch()">CHECKOUT</button>
+                    </div>
+                  
+                </div>
+            </div>
+
+
+            <!-- footer start -->
+
+            <footer>
+               <div id="footer"></div>
+
+    </body>
+
+</html>
+<script>
+    let data = JSON.parse(localStorage.getItem("cartProduct"));
+    let total = data.reduce(function (acc, ele) {
+        return acc + Number(ele.Price);
+    }, 0);
+    let totalMrp = data.reduce(function (acc, ele) {
+        return acc + Number(ele.Mrp);
+    }, 0);
+    document.querySelector("#rice").innerText = "₹ " + totalMrp;
+    document.querySelector(".price").innerText = "₹" + total;
+    document.querySelector("#savings").innerText ="- ₹"+(total-totalMrp);
+    display(data);
+    function display(data) {
+        console.log(data);
+        for (let i = 0; i < data.length; i++) {
+            let d = document.createElement("div");
+            let d1 = document.createElement("div");
+            let img = document.createElement("img");
+            img.src = data[i].Img_ulr;
+
+            d1.append(img);
+            d1.style.hover
+            d1.addEventListener("click", function () {
+                localStorage.setItem("product_details", JSON.stringify(data[i]))
+                window.location.href = "product.html"
+            });
+            let d2 = document.createElement("div");
+            let h3 = document.createElement("h3");
+            h3.innerText = data[i].Title;
+            h3.style.color="black"
+            let p1 = document.createElement("p");
+            let aa = Math.floor(Math.random() * 1234567) + 123456;
+           
+            p1.style.fontWeight = "bold";
+            p1.style.color = "red";
+            let count = 1;
+            let b1 = document.createElement("button");
+            b1.innerText = "-";
+
+            let inp = document.createElement("input");
+            inp.style.textAlign = "center";
+            inp.value = count;
+            let b2 = document.createElement("button");
+            b2.innerText = "+";
+            let pri = data[i].Mrp;
+            let h2 = document.createElement("h2");
+            h2.innerText = "₹" + pri;
+            let p2 = document.createElement("p");
+            p2.innerText = "MRP ₹" + data[i].Price;
+            b1.addEventListener("click", function () {
+                if (count > 1) {
+                    count--;
+                    inp.value = count;
+                    pri = Number(data[i].Mrp) * count;
+                    h2.innerText = "₹" + pri;
+                    p2.innerText = "MRP ₹" + (data[i].Price) * count;
+                    total = total - Number(data[i].Mrp);
+                    document.querySelector("#rice").innerText = "₹" + total;
+                    document.querySelector(".price").innerText = "₹" + total;
+
+                }
+            })
+            b2.addEventListener("click", function () {
+                count++;
+                inp.value = count;
+
+                h2.innerText = "₹" + Number(data[i].Mrp) * count;
+                p2.innerText = "MRP ₹" + data[i].Price * count;
+
+                total = total + Number(data[i].Mrp);
+                console.log(total);
+                document.querySelector("#rice").innerText = "₹" + total;
+                document.querySelector(".price").innerText = "₹" + total;
+            })
+
+            d2.append(h3, p1, b1, inp, b2);
+            let d3 = document.createElement("div");
+
+            h2.style.color = "black";
+
+            p2.style.textDecoration = "line-through"
+            let p4 = document.createElement("p");
+            p4.innerText = "Free Shipping";
+            p4.style.color = "#008000";
+            p4.style.fontWeight = "bold";
+            let p5 = document.createElement("p");
+            p5.innerText = "*Delivery assurance is subject to our delivery locations staying open as per govt. regulations";
+            p5.style.fontSize = "small";
+            d3.append(h2, p2, p4, p5);
+            d.append(d1, d2, d3);
+            document.querySelector("#cl").append(d);
+            h3.addEventListener("click", function () {
+                localStorage.setItem("product_details", JSON.stringify(data[i]))
+                window.location.href = "product.html"
+            });
+        }
+    }
+   
+    document.querySelector("#line").innerText = "CLOTHING KEEDA:      Home > Products > Cart";
+
+    let search=document.querySelector("#search_button")
+search.addEventListener("click",res)
+
+function res(){
+  let searchData=document.querySelector("#input_box").value;
+  localStorage.setItem("searchKey",searchData);
+  console.log("Hii")
+  window.location.href="searchProduct.html";  
+}
+ 
+
+
+    function ch(){
+        let amount=document.querySelector("#rice").innerText
+localStorage.setItem("Amount",amount);
+        location.replace("address.html")
+}
+
+</script>
+<script src="./index.js"  type="module"></script>

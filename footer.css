@@ -1,0 +1,84 @@
+body {
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    background-color: rgb(255, 255, 255);
+    text-rendering: optimizelegibility;
+}
+#footer{
+    /* height: 1000px; */
+    width: 100%;
+    /* border: 1px solid red; */
+    padding-bottom: 50px;
+    background-color: #181818;
+}
+.footer_first{
+    /* height: 1000px; */
+    width: 80%;
+    /* border: 1px solid yellow; */
+    margin: auto;
+}
+.footer_first>img{
+   padding-top: 100px;
+}
+#logo>a{
+    color: yellow;
+    text-decoration: none;
+}
+.footer_first>div{
+  display: flex;
+  justify-content: space-around;
+}
+#ul>ul>a>li{
+    list-style:none;
+}
+#foot_c>div>ul>a>li{
+    list-style: none;
+  margin-bottom: 20px;
+  /* font-weight: bold; */
+  font-size: larger;
+ 
+   color :white
+}
+a{
+    text-decoration: none;
+}
+h3{
+    color:yellow;;
+    margin-left: 38px;
+}
+#input{
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+}
+#button{
+    height: 45px;
+    background-color: yellow;
+}
+.fa-brands{
+    color: white;
+    padding: 10px;
+}
+.top{
+    
+    width: 70%;
+    /* border: 1px solid red; */
+   padding-left: 50px;
+    margin-top: 30px;
+}
+.top>div>p>a{
+    color: white;
+}
+#bottom_img>a>img{
+width: 30%;
+padding-left: 20px;
+}
+h1{
+    color: yellow;
+}
+ul>a>li{
+    list-style: none;
+    margin-bottom: 15px;
+ 
+   color :white
+}
