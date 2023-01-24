@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="productDetail.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="icon" href="https://www.linkpicture.com/q/00000.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="container">
+      <div class="container_left">
+        <img  src="https://images.bewakoof.com/t640/men-black-kyojin-os-printed-t-shirt-542577-1672842691-1.jpg" alt="">
+      </div>
+      <div class="container_right">
+        <p class="project" id="brand">Clothing Keeda</p>
+        <p id="title">Title</p>
+        <p id="rating">Rating</p>
+        <p class="project" id="price">Price</p>
+        <p id="saving"></p>
+        <p id="mrp"></p>
+       
+        <button  id="plus">Plus Size</button>
+        <hr />
+        <p id="des">TriBe members get an extra discount of ₹70 and FREE shipping.</p>
+        <hr>
+        <div id="flex">
+          <button class="addTocart" id="addto">Add To Cart</button>
+
+          <button class="addTocart">Add To Wishlist</button>
+        </div>
+    
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>
+<script>
+     let cart=JSON.parse(localStorage.getItem("cartProduct"))||[];
+    let obj=JSON.parse(localStorage.getItem("detail"))
+    document.querySelector("#title").innerText=obj.Title;
+    document.querySelector("#rating").innerText="Rating: "+ obj.Rating;
+    document.querySelector("#price").innerText="Price: ₹" + obj.Mrp ;
+    document.querySelector("#saving").innerText="SAVINGS  ₹"+(obj.Price-obj.Mrp);
+    document.querySelector("#mrp").innerText="MRP: ₹" + obj.Price;
+    document.querySelector("#brand").innerText=obj.Brand;
+    document.querySelector("img").src=obj.Img_ulr;
+let add=document.querySelector("#addto")
+add.addEventListener("click",addtocart)
+
+function addtocart(){
+   
+       if(cart.includes(obj)){
+            alert("Already product in cart")
+       }else{
+        cart.push(obj);
+        localStorage.setItem("cartProduct",JSON.stringify(cart))
+        alert("Product added")
+       }
+    
+}
+
+</script>
+<script src="./index.js" type="module"></script>

@@ -16,7 +16,7 @@ adminproduct.get("/allproducts",async(req,res)=>
   
 })
 
-adminproduct.use(adminAuthenticate)
+// adminproduct.use(adminAuthenticate)
 
 adminproduct.post("/create",async(req,res)=>
 {
@@ -58,7 +58,7 @@ adminproduct.delete("/delete/:id", async(req,res)=>
 
     try {
         await Productmodel.findByIdAndDelete({_id:Id})
-        res.json({message:`Product has been delted`})
+        res.json({message:`Product has been deleted`})
     } catch (error) {
         res.json( {message:"cannot delete "})
     }

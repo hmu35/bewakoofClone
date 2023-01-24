@@ -13,17 +13,28 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+    /* position: relative; */
+    
+   
 }
 #left{
     /* border: 1px solid blue; */
     width: 25%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     height: 300px;
+    /* overflow-y: scroll; */
+    /* position: fixed;
+    left: 50px;
+    top:200px;
+    z-index: 1; */
 }
 #right{
     /* border: 1px solid black; */
+    margin-left: 100px;
     width: 72%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    overflow: scroll;
+    height: 800px;
 }
 #category>h4{
     margin-top: 30px;
@@ -33,15 +44,14 @@
 #category>div{
     display: flex;
     /* border: 1px solid red; */
-   
-   
-}
-#category{
-    position: sticky;
     
+   
+   
 }
+
 #category>div{
     padding: 15px;
+   
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
 }
@@ -81,20 +91,51 @@ background-color: blue;
 #yellow{
 background-color: yellow;
 }
-#right
+.middle #right
 {
 display: grid;
 grid-template-columns: repeat(3,1fr);
 gap: 10px;
+width: 100%;
 padding: 10px;
 row-gap: 30px;
 }
 
-#right>div>img{
+.middle #right>div>img{
 width: 100%;
 }
-#right>div{
+.middle #right div img:hover{
+    cursor: pointer;
+}
+.middle #right>div{
 padding: 10px;
+padding-bottom: 20px;
 border-radius: 10px;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.middle #right>div>button{
+    margin-top: 10px;
+    margin-left: 50px;
+    border: 0px;
+    background-color: rgba(64, 33, 238, 0.705);
+    padding: 6px;
+    color: rgba(70, 245, 230, 0.507);
+    font-weight: bolder;
+    border-radius: 5px;
+}
+.middle #right>div>button:hover{
+    cursor: pointer;
+    background-color: gray;
+    color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+
+}
+.filt{
+    display: flex;
+   text-align: end;
+}
+#sort{
+    margin-left: 550px;
+    color:blue;
+    font-size: 15px;
 }

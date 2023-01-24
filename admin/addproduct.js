@@ -19,19 +19,20 @@ async function myfun(event) {
     Rating: result.rating.value,
   };
   console.log(obj);
-  let data = await add(obj);
-  console.log(data);
+  let res = await add(obj);
+  console.log(res);
   getData()
-   if(data.message="Prooduct has been added"){
-    alert(data.message)
+   if(res.message=="Prooduct has been added"){
+    
+    alert(res.message)
    }else{
-    alert(data.message)
+    alert(res.message)
    }
 }
 async function add(obj) {
   
   try {
-    let result = await fetch("https://lively-tan-trunks.cyclic.app/adminproduct/create", {
+    let result = await fetch("https://vast-lime-giraffe-wrap.cyclic.app/adminproduct/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,20 +40,21 @@ async function add(obj) {
       },
       body: JSON.stringify(obj),
     });
-    // console.log(localStorage.getItem("token"))
+    console.log(result)
+    console.log(localStorage.getItem("token"))
     addData++
 localStorage.setItem("addData",addData)
-    return result.json();
+    return  await result.json()
   
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
   }
 }  
 /*...............................FetchData......................................*/
 
 async function getData() {
   try {
-    let res = await fetch("https://lively-tan-trunks.cyclic.app/adminproduct/allproducts");
+    let res = await fetch("https://vast-lime-giraffe-wrap.cyclic.app/adminproduct/allproducts");
     let data = await res.json();
     console.log(data);
     bag=data
@@ -77,7 +79,7 @@ function displayData(bag) {
     let Brand = document.createElement("h5");
     Brand.innerText = ele.Brand;
     let MRP = document.createElement("h3");
-    MRP.innerHTML = `<h5>&#8377; ${ele.Mrp}</h5>`;
+    MRP.innerHTML = `<h5>&#8377${ele.Mrp}</h5>`;
    
     // MRP.innerText=ele.MRP
     let price = document.createElement("h5");

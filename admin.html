@@ -44,12 +44,8 @@
       password:admin.password.value
     }
     let data= await signin(adminObj)
-    console.log("getting data",data)
-   
-    
-    if(data.message=="Login Success "){
+    if(data.message=="Login Success"){
       localStorage.setItem("token",JSON.stringify(data.AdminToken))
-  
       window.location.href="./admin/homepage.html"
       alert(data.message)
     }else{
@@ -59,7 +55,7 @@
   }
   async function signin(adminObj){
     try {
-        let result=await fetch("https://lively-tan-trunks.cyclic.app/admin/login",{
+        let result=await fetch("https://vast-lime-giraffe-wrap.cyclic.app/admin/login",{
           method:"POST",
           headers:{
             "Content-Type":"application/json"

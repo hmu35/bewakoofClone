@@ -31,11 +31,11 @@
 <script>
       let placed=document.querySelector("form");
     placed.addEventListener("submit",place);
-    function place(event)
+    function place(e)
     {
-        event.preventDefault();
+        e.preventDefault()
         alert("Address added");
-        window.location.href="payment.html";
+        location.replace("payment.html")
     }
 </script>
 <script src="./index.js" type="module"></script>

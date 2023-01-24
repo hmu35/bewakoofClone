@@ -2,7 +2,7 @@
 let bag;
 async function getData() {
     try {
-      let res = await fetch("https://lively-tan-trunks.cyclic.app/adminproduct/allproducts");
+      let res = await fetch("https://vast-lime-giraffe-wrap.cyclic.app/adminproduct/allproducts");
       let data = await res.json();
       console.log(data);
       bag=data
@@ -57,7 +57,7 @@ async function getData() {
   async function deletedata(ID){
     console.log(ID)
     try {
-        let response=await fetch(`https://lively-tan-trunks.cyclic.app/adminproduct/delete/${ID}`,{
+        let response=await fetch(`https://vast-lime-giraffe-wrap.cyclic.app/adminproduct/delete/${ID}`,{
             
           method:"DELETE",
           headers:{
@@ -68,7 +68,7 @@ async function getData() {
         })
         count++;
         localStorage.setItem("count",count)
-        return  response.json()
+        return await response.json()
         
     } catch (err) {
       console.log(err)

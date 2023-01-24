@@ -94,3 +94,4 @@ function responsiveSlider() {
 window.onload = function() {
   responsiveSlider();
   }
+

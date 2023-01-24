@@ -67,7 +67,7 @@ async function getData() {
   }
   async function update(Id , editObj){
     try {
-        let response=await fetch(`https://lively-tan-trunks.cyclic.app/adminproduct/edit/${Id}`,{
+        let response=await fetch(`https://vast-lime-giraffe-wrap.cyclic.app/adminproduct/edit/${Id}`,{
           method:"PATCH",
           headers:{
             "Content-Type":"application/json",

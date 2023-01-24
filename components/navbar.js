@@ -26,11 +26,11 @@ const navbar=()=>{
             <input type="text" id="input_box" placeholder="Search by product category or collection">
             <button id="search_button">Search</button>
           
-         <a href="login.html">Login</a>
+         <a href="login.html"> <i class="fa-solid fa-user"></i></a>
         </div>
        <div class="icon">
         <a href=""> <i class="fa-solid fa-heart"></i></a>
-       <a href="cart.html"> <i class="fa-sharp fa-solid fa-bag-shopping"></i></a>
+       <a href="cart.html"> <i class="fa-sharp fa-solid fa-bag-shopping"></i> </a>
        <img src="https://images.bewakoof.com/web/india-flag-round-1639566913.png" alt="">
        </div>
       

@@ -1,7 +1,8 @@
 const jwt=require("jsonwebtoken")
 require("dotenv").config()
 const adminAuthenticate=(req,res,next)=>{
-    const AdminToken=req.headers.authorization
+    const AdminToken=req.headers.Authorization;
+    console.log(AdminToken)
     if(AdminToken){
         const decode=jwt.verify(AdminToken,process.env.key)
         if(decode){

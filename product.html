@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.linkpicture.com/q/00000.png">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="product.css">
@@ -40,8 +41,24 @@
                 <div><input type="checkbox"><p>Snitch</p></div>
                 <div><input type="checkbox"><p>Dilinger</p></div>
             </div>
+            
         </div>
-        <div id="right"></div>
+      
+   <div class="middle">
+      <div class="filt">
+         <p id="sort"></p> 
+         <select name="" id="sort_by_price" onclick="sort()">
+            <option value="">Sort by price</option>
+         <option value="low">Price:High to Low</option>
+         <option value="high">Price:Low to High</option>
+      </select>
+   </div>
+      <div id="right">
+        
+      </div>
+   </div>
+        
+      
     </div>
     <div id="footer"></div>
 </body>
@@ -52,7 +69,7 @@
    let bag;
     async function getData() {
   try {
-    let res = await fetch(`https://lively-tan-trunks.cyclic.app/product/${gender}`);
+    let res = await fetch(`https://vast-lime-giraffe-wrap.cyclic.app/product/${gender}`);
     let data = await res.json();
     console.log(data);
     bag=data
@@ -70,7 +87,13 @@ function displayData(bag) {
   bag.forEach((ele) => {
     let div = document.createElement("div");
     let img = document.createElement("img");
+    
     img.setAttribute("src", ele.Img_ulr);
+    img.addEventListener("click",lap);
+    function lap(){
+        localStorage.setItem("detail",JSON.stringify(ele))
+        window.location.href="productDetail.html";
+    }
     let Title = document.createElement("h5");
     Title.innerText = ele.Title;
     let Brand = document.createElement("p");
@@ -116,9 +139,9 @@ function fun(){
 //    console.log(bag)
 }
 let Sort=document.querySelector("#short");
-Sort.addEventListener("click",sort)
+Sort.addEventListener("click",short)
 
-function sort(){
+function short(){
   
    let filtersort=bag.filter((ele)=>{
       return ele.Category=="Shorts"
@@ -163,5 +186,24 @@ function company(){
    console.log(filterbewacoof)
    console.log(bag)
 }
+function sort(){
+   let select=document.querySelector("select").value;
+   console.log(select)
+   if(select=="low"){
+      let sortData=bag.sort((a,b)=>{
+         return b.Mrp-a.Mrp;
+         
+      })
+      displayData(sortData)
+   }else if(select=="high"){
+      let sortData=bag.sort((a,b)=>{
+         return a.Mrp-b.Mrp;
+         
+      })
+      displayData(sortData)
+   }
+}
+
+
 </script>
 <script src="./index.js" type="module"></script>

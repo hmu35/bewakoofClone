@@ -1,0 +1,70 @@
+.container{
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.container>div{
+    width: 40%;
+    /* border: 1px solid red; */
+
+}
+.project{
+    font-size: 25px;
+    font-weight: bold;
+
+}
+#title{
+    font-size: large;
+}
+#rating{
+    font-size: large;
+}
+#plus{
+    font-size: large;
+    background-color: grey;
+    border: 0px;
+}
+#des{
+    font-size: large;
+}
+.addTocart{
+    width: 200px;
+   height: 50px;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 0px;
+}
+
+.addTocart:hover{
+    cursor: pointer;
+    background-color: grey;
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#flex{
+    display: flex;
+    justify-content: space-between;
+}
+#addto{
+    background-color: rgba(64, 33, 238, 0.705);
+}
+
+.container_left img{
+    width: 100%;
+}
+/* .container_left{
+    position: fixed;
+} */
+#mrp{
+    text-decoration: line-through;
+    font-weight: bold;
+}
+#saving{
+    color: green;
+    font-weight: bold;
+}

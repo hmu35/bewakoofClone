@@ -70,8 +70,10 @@
     document.querySelector(".price").innerText = "₹" + total;
     document.querySelector("#savings").innerText ="- ₹"+(total-totalMrp);
     display(data);
+  
     function display(data) {
-        console.log(data);
+        console.log(data.length);
+       
         for (let i = 0; i < data.length; i++) {
             let d = document.createElement("div");
             let d1 = document.createElement("div");
@@ -103,6 +105,21 @@
             let b2 = document.createElement("button");
             b2.innerText = "+";
             let pri = data[i].Mrp;
+            
+            let remove=document.createElement("button")
+            remove.innerText="Remove"
+            remove.style.backgroundColor="red"
+            remove.addEventListener("click",()=>{
+                deleted(data)
+            //  deleted.splice(data)
+            //  localStorage.setItem("remove",JSON.stringify(data))
+            //     console.log("hii")
+            })
+            // function rem(id){
+            //     data.splice(data[i],1)
+            //     localStorage.setItem("remove",JSON.stringify(data))
+            //     display(data)
+            // }
             let h2 = document.createElement("h2");
             h2.innerText = "₹" + pri;
             let p2 = document.createElement("p");
@@ -133,7 +150,7 @@
                 document.querySelector(".price").innerText = "₹" + total;
             })
 
-            d2.append(h3, p1, b1, inp, b2);
+            d2.append(h3, p1, b1, inp, b2,remove);
             let d3 = document.createElement("div");
 
             h2.style.color = "black";
@@ -146,7 +163,7 @@
             let p5 = document.createElement("p");
             p5.innerText = "*Delivery assurance is subject to our delivery locations staying open as per govt. regulations";
             p5.style.fontSize = "small";
-            d3.append(h2, p2, p4, p5);
+            d3.append(h2, p2, p4, p5  );
             d.append(d1, d2, d3);
             document.querySelector("#cl").append(d);
             h3.addEventListener("click", function () {
@@ -156,6 +173,16 @@
         }
     }
    
+function deleted(data){
+    data.splice(data,1)
+    localStorage.setItem("remove",JSON.stringify(data))
+      display(data)
+
+}
+
+
+
+
     document.querySelector("#line").innerText = "CLOTHING KEEDA:      Home > Products > Cart";
 
     let search=document.querySelector("#search_button")
@@ -175,6 +202,8 @@ function res(){
 localStorage.setItem("Amount",amount);
         location.replace("address.html")
 }
+  
+
 
 </script>
 <script src="./index.js"  type="module"></script>
