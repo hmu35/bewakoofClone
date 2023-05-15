@@ -1,0 +1,85 @@
+ Bewakoof Clone Website Documentation
+
+
+Table of Contents
+Introduction
+System Requirements
+Installation and Setup
+Architecture Overview
+Features
+Technologies Used
+Usage Examples
+API Reference
+Database Schema
+Testing
+Deployment
+Troubleshooting
+Frequently Asked Questions (FAQ)
+Support and Contact Information
+Conclusion
+
+
+1. Introduction
+Welcome to the documentation for the Bewakoof Clone Website! This documentation provides a comprehensive guide to understanding, installing, and using the Bewakoof clone website, which is a replica of the popular online fashion store Bewakoof.
+
+The Bewakoof Clone Website aims to provide an e-commerce platform for users to browse, purchase, and manage fashionable clothing and accessories.
+
+2. System Requirements
+To run the Bewakoof Clone Website, ensure that your system meets the following requirements:
+
+Operating System: Windows, macOS, or Linux
+Web Server: Apache or Nginx
+PHP Version: 7.4 or later
+Database: MySQL or MariaDB
+Browser: Google Chrome, Mozilla Firefox, or Safari
+3. Installation and Setup
+To install and set up the Bewakoof Clone Website, follow these steps:
+
+Clone the repository from GitHub: git clone https://github.com/your-username/bewakoof-clone.git.
+Configure your web server to serve the cloned project's files.
+Create a new MySQL or MariaDB database for the project.
+Copy the .env.example file and rename it to .env.
+Update the .env file with your database credentials and other configuration settings.
+Run the following commands in the project directory:
+composer install to install the necessary dependencies.
+php artisan key:generate to generate an application key.
+php artisan migrate to run the database migrations.
+php artisan db:seed to seed the database with sample data (optional).
+Set up a virtual host or configure your local development environment to access the website.
+4. Architecture Overview
+The Bewakoof Clone Website follows a typical web application architecture. It utilizes the Laravel framework, which follows the Model-View-Controller (MVC) pattern. The architecture consists of the following components:
+
+Models: Represent the data and business logic of the application.
+Views: Display the user interface and receive user input.
+Controllers: Handle user requests, retrieve data from models, and pass it to the views.
+The website interacts with a database to store and retrieve product information, user details, and other relevant data.
+
+5. Features
+The Bewakoof Clone Website offers the following features:
+
+User registration and authentication
+Browsing and searching for products
+Product categories and filtering
+Adding products to the shopping cart
+Managing the shopping cart (updating quantities, removing items)
+Placing and managing orders
+User profile management
+Product reviews and ratings
+Wishlist functionality
+Order history and tracking
+6. Technologies Used
+The following technologies and frameworks are used in the Bewakoof Clone Website:
+
+Backend Framework: Laravel
+Frontend Framework: Vue.js
+Database: MySQL or MariaDB
+Web Server: Apache or Nginx
+Package Manager: Composer
+Version Control: Git
+7. Usage Examples
+To use the Bewakoof Clone Website, follow these examples:
+
+Register a new user account.
+Browse the product catalog and select desired items.
+Add selected items to the shopping cart.
+Proceed to checkout
