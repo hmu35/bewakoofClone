@@ -9,7 +9,7 @@ Hello everyone, this is a Readme for my construct week project that has been com
 > Executing the commands mentioned below one by one in your command line will help in making this web app, up and running on your system in the development mode.
 > 
 > ```bash
-> git clone https://github.com/manoj7654/fascinated-governor-8349.git
+> git clone 
 > cd ./dear-ink-638
 > open with live server
 
