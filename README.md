@@ -1,7 +1,7 @@
 # fascinated-governor-8349
 Hello everyone, this is a Readme for my construct week project that has been completed successfully within the duration of 5 days. It was a solo project. I've made the clone website of Clothing Keeda . I've created Home page , Signup page , Login page and Clothing products page.
 
-### live link: https://taupe-conkies-95d9ec.netlify.app/
+### live link: https://clothing-keeda.netlify.app/
 
 <img src="https://www.linkpicture.com/q/9999-2.png">
 
