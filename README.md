@@ -103,5 +103,5 @@ Glimpse and Screenshots of my cloned website:
 ## 🅔 Product Admin Dash Board Page
 
 -This is the product detail page,here Admin can see product and also  see how many product  here.
-<img src="https://www.linkpicture.com/q/Screenshot-309_1.png">
+<img src="https://www.linkpicture.com/q/Screenshot-309_3.png">
 
